@@ -47,3 +47,11 @@ class Currency:
         else:
             raise ValueError("Must multiple by a int or float")
         raise ValueError("Requires two arguments, a currency and an int (or float)")
+
+
+class DifferentCurrencyCodeError(Exception):
+
+    def __init__(self, value):
+        self.value = value
+    def __str__(self):
+        return repr(self.value)
