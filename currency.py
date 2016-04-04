@@ -1,9 +1,9 @@
 class Currency:
 
-    def __init__(self, *args="$1.00"):
+    def __init__(self, *args):
         if len(args) == 1:
-            self.code = args[0][0]
-            self.value = args[0][1:]
+            self.code = args[0][0:3]
+            self.value = args[0][3:]
         elif len(args) == 2:
             self.code = args[0]
             self.value = args[1]
