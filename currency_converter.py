@@ -6,14 +6,12 @@ class CurrencyConverter:
     def __init__(self, exchange_rate={'USD': 1, 'EUR': 0.88}):
         self.exchange_rate = exchange_rate
 
-    def set_default_rate(self):
-        return {'USD': 1.0,
-                'EUR' : 0.87774,
-                'GBP' : 0.70077,
-                'INR' : 66.1158,
-                'AUD' : 1.31447,
-                'CAD' : 1.30651}
-
+    #'USD': 1.0,
+    #'EUR' : 0.87774,
+    #'GBP' : 0.70077,
+    #'INR' : 66.1158,
+    #'AUD' : 1.31447,
+    #'CAD' : 1.30651}
 
     def convert(self, from_currency, to_code):
         if (to_code not in self.exchange_rate.keys() or
