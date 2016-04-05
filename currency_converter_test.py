@@ -13,8 +13,6 @@ class TestCurrencyConverter(unittest.TestCase):
 
     def test_convert(self):
         self.assertEqual(CurrencyConverter().convert(Currency(), 'EUR'), Currency('EUR', 0.88))
-
-
-
+        
 if __name__ == '__main__':
     unittest.main()
