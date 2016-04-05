@@ -1,5 +1,5 @@
 import unittest
-import currency
+from currency import Currency
 
 
 class TestCurrency(unittest.TestCase):
@@ -8,13 +8,13 @@ class TestCurrency(unittest.TestCase):
         self.assertEqual(Currency('$5.5').value, 5.5)
 
     def test_assign_code_one_arg(self):
-        self.assertEqual(Currency('$5.5').value, "USD")
+        self.assertEqual(Currency('$5.5').code, "USD")
 
     def test_assign_value_two_arg(self):
-        self.assertEqual(Currency('EUR': 10).value, 10)
+        self.assertEqual(Currency('EUR', 10).value, 10)
 
     def test_assign_code_two_arg(self):
-        self.assertEqual(Currency('EUR': 10).value, "EUR")
+        self.assertEqual(Currency('EUR', 10).code, "EUR")
 
     def test_is_equal(self):
         self.assertTrue(Currency() == Currency('$1'))
