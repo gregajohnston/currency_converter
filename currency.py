@@ -9,7 +9,14 @@ class Currency:
             self.value = 1.0
         elif len(args) == 1:
             self.code = args[0][0:1]
-            self.code = change_from_symbol(self.code)
+            if self.code == '$':
+                self.code = 'USD'
+            elif self.code == '€':
+                self.code = 'EUR'
+            elif self.code == '£':
+                self.code = 'GBP'
+            elif self.code == "¥":
+                self.code = "JPY"
             self.value = args[0][1:]
             self.value = float(self.value.strip())
         elif len(args) == 2:
@@ -17,17 +24,6 @@ class Currency:
             self.value = args[1]
         else:
             raise TypeError("Must import 0, 1 or 2 arguments")
-
-    def change_from_symbol(string):
-        if string == '$':
-            string = 'USD'
-        elif string == '€':
-            string = 'EUR'
-        elif string == '£':
-            string = 'GBP'
-        elif string == "¥":
-            string = "JPY"
-        return string
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
