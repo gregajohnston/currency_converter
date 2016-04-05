@@ -38,8 +38,7 @@ class Currency:
         if isinstance(other, self.__class__):
             if self.code == other.code:
                 return Currency(self.code, self.value + other.value)
-            else:
-                raise DifferentCurrencyCodeError("Cannot add different currencies")
+            raise DifferentCurrencyCodeError("Cannot add different currencies")
         raise ValueError("Both variables not type Currency")
 
     def __sub__(self, other):
@@ -59,8 +58,4 @@ class Currency:
 
 
 class DifferentCurrencyCodeError(Exception):
-
-    def __init__(self, value):
-        self.value = value
-    def __str__(self):
-        return repr(self.value)
+    pass
